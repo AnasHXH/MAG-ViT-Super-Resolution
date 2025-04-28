@@ -5,15 +5,15 @@ def create_dataloaders(args):
     """create dataloader"""
     if args.dataset == 'AID':
         from data.aid import AIDataset
-        training_set = AIDataset(args, root_dir='E:/leisen-workspace/codelife/super-resolution/dataset/SR for remote sensing/AID_dataset',  # AID_dataset
+        training_set = AIDataset(args, root_dir='/data/Image_restoration/Datasets/AID-dataset/train',  # AID_dataset
                                  train=True)
-        val_set = AIDataset(args, root_dir='E:/leisen-workspace/codelife/super-resolution/dataset/SR for remote sensing/AID_dataset',
+        val_set = AIDataset(args, root_dir='/data/Image_restoration/Datasets/AID-dataset/val',
                             train=False)
     elif args.dataset == 'UCMerced':
         from data.ucmerced import UCMercedDataset
-        training_set = UCMercedDataset(args, root_dir='F:/research/dataset/SR for remote sensing/UCMerced_LandUse/slipt-train-val/train-x3',
+        training_set = UCMercedDataset(args, root_dir='/data/Image_restoration/Datasets/UCMerced-dataset/train',
                                  train=True)
-        val_set = UCMercedDataset(args, root_dir='F:/research/dataset/SR for remote sensing/UCMerced_LandUse/slipt-train-val/val-x3',
+        val_set = UCMercedDataset(args, root_dir='/data/Image_restoration/Datasets/UCMerced-dataset/val',
                             train=False)
     elif args.dataset == 'DIV2K':
         from data.div2k import DIV2KDataset
